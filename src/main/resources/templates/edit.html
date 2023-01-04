@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user</title>
+</head>
+<body>
+Edit User
+
+<br/>
+<hr/>
+
+<form th:method="POST" th:action="@{/users/{id}/(id=${user.getId()})}" th:object="${user}">
+    <label for="username">Enter name: </label>
+    <input type="text" th:field="*{username}" id="username"/>
+    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name error</div>
+    <br/>
+    <label for="age">Enter age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</div>
+    <br/>
+    <label for="height">Enter height: </label>
+    <input type="text" th:field="*{height}" id="height"/>
+    <div style="color:red" th:if="${#fields.hasErrors('height')}" th:errors="*{height}">Height error</div>
+    <br/>
+    <label for="weight">Enter weight: </label>
+    <input type="text" th:field="*{weight}" id="weight"/>
+    <div style="color:red" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}">Weight error</div>
+    <br/>
+    Choose sex:
+    <input type="radio" th:field="*{sex}" id="male"
+           name="sex" value="male">
+    <label for="male">Male</label>
+    <input type="radio" th:field="*{sex}" id="female"
+           name="sex" value="female">
+    <label for="female">Female</label>
+    <div style="color:red" th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}">Sex error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

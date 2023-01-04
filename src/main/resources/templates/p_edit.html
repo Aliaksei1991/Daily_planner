@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit product</title>
+</head>
+<body>
+Edit Product info
+
+<br/>
+<hr/>
+
+<form th:method="POST" th:action="@{/products/{id}/(id=${product.getId()})}" th:object="${product}">
+    <label for="itemName">Enter product name: </label>
+    <input type="text" th:field="*{itemName}" id="itemName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('itemName')}" th:errors="*{itemName}">ItemName error</div>
+    <br/>
+    <label for="proteins">Enter proteins amount in 100 g: </label>
+    <input type="text" th:field="*{proteins}" id="proteins"/>
+    <div style="color:red" th:if="${#fields.hasErrors('proteins')}" th:errors="*{proteins}">Proteins amount error</div>
+    <br/>
+    <label for="fats">Enter fats amount in 100 g: </label>
+    <input type="text" th:field="*{fats}" id="fats"/>
+    <div style="color:red" th:if="${#fields.hasErrors('fats')}" th:errors="*{fats}">Fats amount error</div>
+    <br/>
+    <label for="carbohydrates">Enter carbohydrates amount in 100 g: </label>
+    <input type="text" th:field="*{carbohydrates}" id="carbohydrates"/>
+    <div style="color:red" th:if="${#fields.hasErrors('carbohydrates')}"
+         th:errors="*{carbohydrates}">Carbohydrates amount error</div>
+    <br/>
+    <label for="calories">Enter calories amount in 100 g: </label>
+    <input type="text" th:field="*{calories}" id="calories"/>
+    <div style="color:red" th:if="${#fields.hasErrors('calories')}"
+         th:errors="*{calories}">Calories amount error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

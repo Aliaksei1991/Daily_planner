@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="title"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        .round {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header th:insert="header :: header"></header>
+
+<hr class="featurette-divider">
+<hr class="featurette-divider">
+<hr class="featurette-divider">
+
+    <div class="container marketing">
+        <div class="row">
+            <div class="col-lg-4">
+                <img th:src="@{product_list.jpg}" width="140" height="140" class="round">
+                <h2>Products List</h2>
+                <p>You can see all products, choose anyone and see details. Please add new product if you don't find the required one in the list.</p>
+                <p><a class="btn btn-secondary" th:href="@{/products}">View details »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img th:src="@{calculator.jpg}" width="140" height="140" class="round">
+                <h2>Calories calculator</h2>
+                <p>In this page you can add any product you ate and calculate calories, proteins, fats and carbohydrates it includs.</p>
+                <p><a class="btn btn-secondary" th:href="@{/calc/add}">View details »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img th:src="@{results.jpg}" width="140" height="140" class="round">
+                <h2>Day result</h2>
+                <p>Here you can see your summary day menu, all calories, proteins, fats and carbohydrates you get today with your meal.</p>
+                <p><a class="btn btn-secondary" th:href="@{calc/day_result}">View details »</a></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">3 things I do that you could also do. <span class="text-muted">It’ll blow your mind.</span></h2>
+                <p class="lead">As I mentioned above, organization and creativity help me make the best food choices every day. This is because, the way I see it, healthy eating is a choice we make every time we eat.
+
+                    For this reason, I try to make the decision-making process as easy as possible when I’m choosing a meal or snack. That way, I can continue to choose what is best for me.
+
+                    Here are three things I do on a daily or weekly basis that make it easier for me to eat healthily.
+
+                <h3>Meal prep</h3>
+
+                    While this may sound cliché, preparing my food beforehand for the week really does the trick.
+
+                    Cooking can take up a lot of time, but having food that just needs to be heated and served allows me to have a nutritious meal ready in minutes.
+
+                    One of my go-to meal-prepping tips is to cook a batch of proteins — usually chicken or another lean meat — that I can portion and freeze for over a week and just defrost as I need them.
+
+                    I also make sure to prep vegetables for the week. This way, I don’t think twice before having some salad or cooking a side of veggies with each meal.
+
+                    I try to prepare them in different ways to avoid getting bored and choosing not to eat them.
+
+                    For example, when it comes to carrots or zucchinis, I’ll either slice, dice, grate, or spiralize them, all of which help me incorporate them into my meals easily.
+
+                <h3>Keep fruit within arm’s reach</h3>
+
+                    Keeping my fruit visible reminds me to eat fruit during the day.
+
+                    Research shows that you’re most likely to eat more of whatever foods you place near you, regardless of whether they are fruits or sweets (2, 3Trusted Source, 4Trusted Source).
+
+                    I implement this principle daily and choose to have my fruit on display on a table and my snacks and sweets stored away.
+
+                <h3>Follow a routine</h3>
+
+                    While I don’t officially plan a weekly menu, I do have a specific set of dishes that I stick to at every meal.
+
+                    For example, my breakfast choices usually include:
+
+                    a Costa Rican classic of gallo pinto and eggs
+                    toast with peanut butter and a side of eggs
+                    oatmeal with fruit
+                    oatmeal pancakes
+                    The same goes for the rest of my meals and snacks, where I have at least three different options to choose from without giving it much thought.
+
+                    Having a predetermined set of dishes that I know I like saves me time having to decide what to eat, and it allows me to vary my meals depending on whether I crave something sweet or savory.
+
+                    It’s also very convenient for grocery shopping, as you already know what you’ll most likely be having at every meal.</p>
+            </div>
+            <div class="col-md-5">
+                <img th:src="@{main.jpeg}"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+    </div>
+
+
+<div th:insert="footer :: footer"></div>
+
+
+</body>
+</html>
